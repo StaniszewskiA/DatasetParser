@@ -1,11 +1,12 @@
 defmodule DatasetParser do
-  def read_file(filepath) do
-    IO.puts(filepath)
+  def traverse_directory(folder_path) do
+    folder_path
+    |> Path.expand()
+    |> File.ls!()
+    |> Enum.each(&IO.puts(&1))
   end
 end
 
-# dupa
+folder_path = "E:\\Users\\PanSt\\OneDrive\\Pulpit\\Diorisis\\DiorisisCorpus1.51"
 
-filepath = "E:\\Users\\PanSt\\OneDrive\\Pulpit\\Diorisis\\DiorisisCorpus1.51\\Achilles Tatius (0532) - Leucippe and Clitophon (001).json"
-
-DatasetParser.read_file(filepath)
+DatasetParser.traverse_directory(folder_path)
