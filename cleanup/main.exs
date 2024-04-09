@@ -19,10 +19,17 @@ defmodule DatasetParser do
     |> File.ls!()
     |> Enum.filter(&Path.extname(&1) == ".json")
     |> Enum.at(index - 1)
+    |> case do
+      nil -> IO.puts("No JSON found")
+      file -> read_json_file(file)
+    end
+  end
+  defp read_json_file(file) do
+    IO.puts(file)
   end
 end
 
+Mix.install([:jason])
 folder_path = "E:\\Users\\PanSt\\OneDrive\\Pulpit\\Diorisis\\DiorisisCorpus1.51"
-index = 1
 
-IO.puts(DatasetParser.choose_json(folder_path, index))
+DatasetParser.choose_json(folder_path, 1)
