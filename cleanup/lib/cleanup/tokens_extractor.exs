@@ -1,4 +1,4 @@
-defmodule TokenExtractor do
+defmodule Cleanup.TokenExtractor do
   def extract_tokens_from_json(json) do
     case Jason.decode(json) do
       {:ok, parsed_data} ->

@@ -1,4 +1,6 @@
-defmodule DatasetParser do
+defmodule Cleanup.DatasetParser do
+  use Application
+
   def count_jsons(folder_path) do
     folder_path
     |> Path.expand()
