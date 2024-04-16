@@ -7,13 +7,52 @@ defmodule Grekifier do
   end
   def devulgarize(string) do
     vulgar_to_greek = %{
-      "a/": "ά"
+      # Accutus
+      "a/" => "ά",
+      "e/" => "ἐ",
+      "n/" => "ἠ",
+      "i/" => "ἰ",
+      "u/" => "ὐ",
+      "w/" => "ὠ",
+      "o/" => "ό"
+      # TODO
+      # Gravis - unfortunately it's denoted by backslash in the dataset, need to find a way around it
+      # Circumflexus
+      # Soft breathing
+      # Soft breathing + Accutus
+      # Soft breathing + Circumflexus
+      # Soft breathing + Gravis
+      # Rough breathing
+      # Rough breathing + Accutus
+      # Rough breathing + Circumflexus
+      # Rough breathing + Gravis
+      # Coronis
+      # Diaeresis
     }
-    IO.puts(string)
+    devulgarized =
+      Enum.reduce(vulgar_to_greek, string, fn {vulgar, greek}, acc ->
+        Regex.replace(~r/#{vulgar}/, acc, greek, global: true)
+      end)
+
+    IO.puts(devulgarized)
   end
 end
 
 greek_phrase = "Μεταφυσικά"
-vulgarized = "Metaphysika/"
+vulgarized = "a/e/n/i/u/w/"
 
 Grekifier.count_vowels(vulgarized)
+Grekifier.devulgarize(vulgarized)
+
+defmodule GrekifierTest do
+  use ExUnit.Case
+
+  describe "devulgarize/1" do
+    test "replaces vulgar characters with Greek counterparts" do
+      input "i/t se/ems to/ be/ w/o/rki/ng a/s e/xpec/te/d"
+      expected_output = "ἰt sἐems tό bἐ ὠόrkἰng άs ἐxpec/tἐd"
+
+      assert Grekifier.devulgarize(input) == expected_output
+    end
+  end
+end
