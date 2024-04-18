@@ -14,5 +14,6 @@ defmodule Cleanup do
   """
   def hello do
     :world
+    IO.puts("Hello")
   end
 end

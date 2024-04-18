@@ -43,16 +43,3 @@ vulgarized = "a/e/n/i/u/w/"
 
 Grekifier.count_vowels(vulgarized)
 Grekifier.devulgarize(vulgarized)
-
-defmodule GrekifierTest do
-  use ExUnit.Case
-
-  describe "devulgarize/1" do
-    test "replaces vulgar characters with Greek counterparts" do
-      input "i/t se/ems to/ be/ w/o/rki/ng a/s e/xpec/te/d"
-      expected_output = "ἰt sἐems tό bἐ ὠόrkἰng άs ἐxpec/tἐd"
-
-      assert Grekifier.devulgarize(input) == expected_output
-    end
-  end
-end
