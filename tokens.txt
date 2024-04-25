@@ -1,18 +1,16 @@
-Token: *sidw\n, Lemma: *sidw/n
-Token: e)pi\, Lemma: e)pi/
-Token: qala/tth|, Lemma: qa/lassa
-Token: po/lis, Lemma: po/lis
+Token: ἐpὶ, Lemma: ἐpί
+Token: qalάtthη, Lemma: qάlassa
+Token: pόlis, Lemma: pόlis
 Token: ,, Lemma: 
-Token: *)assuri/wn, Lemma: *)assu/rioi
-Token: h(, Lemma: o(
-Token: qa/lassa, Lemma: qa/lassa
+Token: ἀssurίωn, Lemma: ἀssύrioi
+Token: ἡ, Lemma: ὁ
+Token: qάlassa, Lemma: qάlassa
 Token: ,, Lemma: 
-Token: mh/thr, Lemma: mh/thr
-Token: *foini/kwn, Lemma: *foi=nic
-Token: h(, Lemma: o(
-Token: po/lis, Lemma: po/lis
+Token: mἡthr, Lemma: mήthr
+Token: *foinίkωn, Lemma: *foῖnic
+Token: pόlis, Lemma: pόlis
 Token: ,, Lemma: 
-Token: *qhbai/wn, Lemma: *qhbai=os
+Token: *qhbaίωn, Lemma: *qhbaῖos
 Token: o(, Lemma: o(
 Token: dh=mos, Lemma: dh=mos
 Token: path/r, Lemma: path/r
